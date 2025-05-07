@@ -1,0 +1,99 @@
+<div class="col-lg-12">
+    <nb-card>
+        <nb-card-header *ngIf="modoCreacion">
+            CREAR RECORRIDO
+        </nb-card-header>
+        <nb-card-header *ngIf="!modoCreacion">
+            ACTUALIZAR RECORRIDO
+        </nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3">
+                    <label>Nombre Recorrido</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elRecorrido.nombreRecorrido">
+                    <p *ngIf="intentoEnvio && elRecorrido.nombreRecorrido=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Duracion Estimada</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text"
+                           [(ngModel)]="elRecorrido.duracionEstimada">
+                    <p *ngIf="intentoEnvio && elRecorrido.duracionEstimada=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Precio</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elRecorrido.precio">
+                    <p *ngIf="intentoEnvio && elRecorrido.precio=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Ubicacion Inicio</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elRecorrido.ubicacionInicio">
+                    <p *ngIf="intentoEnvio && elRecorrido.ubicacionInicio=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Ubicacion Final</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elRecorrido.ubicacionFinal">
+                    <p *ngIf="intentoEnvio && elRecorrido.ubicacionFinal=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Estaciones</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elRecorrido.estaciones">
+                    <p *ngIf="intentoEnvio && elRecorrido.estaciones=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3">
+                    <label>Podcast</label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" type="text" 
+                           [(ngModel)]="elRecorrido.podcast">
+                    <p *ngIf="intentoEnvio && elRecorrido.podcast=='' ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                    <button  *ngIf="modoCreacion" 
+                              class="btn btn-primary btn-block" (click)="agregar()">
+                        Crear
+                    </button>
+                    <button *ngIf="!modoCreacion" 
+                            class="btn btn-primary btn-block" (click)="editar()">
+                        Actualizar
+                    </button>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
